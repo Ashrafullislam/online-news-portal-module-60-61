@@ -9,15 +9,29 @@ export  const routes = createBrowserRouter([
     path:'/', element: <Main> </Main> , 
     children: [
         {
-            path: '/', element: <Home > </Home> 
+            path: '/',
+            loader() {
+             return fetch(`http://localhost:5000/newsData`)
+            },
+            element: <Home >  </Home> 
         },
      
         {
-            path: '/category/:id', element: <Category > </Category>
+            path: '/category/:id', 
+            loader({params}) {
+               return fetch(`http://localhost:5000/category/${params.id}`) 
+            },
+            element: <Category > </Category>
         },
+
         {
-            path: '/news/:id', element: <News> </News>
+            path: '/news/:id',
+            loader({params}) {
+             return fetch(`http://localhost:5000/newsData/${params.id}`)
+            },
+            element: <News> </News>     
         },
+
         {
             path: '*', element: <div> Routes not found </div>
         }

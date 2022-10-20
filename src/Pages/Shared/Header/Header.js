@@ -4,7 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
-import { FaHeadset,FaUserAlt } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa" ; 
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -12,12 +13,12 @@ const Header = () => {
         <div>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home"> Online News Portal </Navbar.Brand>
+        <Navbar.Brand >  <Link to= '/' className='text-light text-decoration-none'>  Online News Portal </Link>   </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#features">All News </Nav.Link>
-            <Nav.Link href="#pricing"> Home </Nav.Link>
+            <Nav.Link to = '/home' > Home </Nav.Link>
             <NavDropdown title=" Category" id="collasible-nav-dropdown"> 
        
               <NavDropdown.Item href="#action/3.1"> Breaking News  </NavDropdown.Item>

@@ -4,13 +4,14 @@ import { Outlet } from 'react-router-dom';
 import Header from '../../Pages/Shared/Header/Header';
 import LeftSideNav from '../../Pages/Shared/LeftSideNav/LeftSideNav';
 import RightSideNav from '../../Pages/Shared/RightSideNav/RightSideNav';
+import './Main.css';
 
 
 const Main = () => {
     return (
         <div>
          <Header> </Header>
-             <Container  >
+             <Container  className='home-layout-container' >
                 <Row> 
                     <Col lg='2' className='d-none d-lg-block'> 
                     <LeftSideNav> </LeftSideNav>
