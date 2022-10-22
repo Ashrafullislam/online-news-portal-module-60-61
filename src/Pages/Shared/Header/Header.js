@@ -5,50 +5,49 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
 import { FaUserAlt } from "react-icons/fa" ; 
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import './Header.css' ;  
 
 
 const Header = () => {
-    return (
-        <div>
+
+  return (
+    <div>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand >  <Link to= '/' className='text-light text-decoration-none'>  Online News Portal </Link>   </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features">All News </Nav.Link>
-            <Nav.Link to = '/home' > Home </Nav.Link>
-            <NavDropdown title=" Category" id="collasible-nav-dropdown"> 
+          <Nav className="me-auto d-flex align-items-center">
+            <NavLink className= 'text-light' to = '/' >All News </NavLink>
+            <NavLink to = '/' className = 'text-light' > Home </NavLink>
+            <NavLink className= 'text-light'> About  </NavLink>
+            <NavDropdown  title=" Category" id="collasible-nav-dropdown"> 
        
-              <NavDropdown.Item href="#action/3.1"> Breaking News  </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Regular News 
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3"> Sport News </NavDropdown.Item>
+              <NavDropdown.Item href='http://localhost:3000/category/01' > Breaking News  </NavDropdown.Item>
+              <NavDropdown.Item >  Regular News </NavDropdown.Item>
+              <NavDropdown.Item href ='http://localhost:3000/category/02' > Sport News </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="http://localhost:3000/category/03">
                 International News
               </NavDropdown.Item>
             </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets"> About  </Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-                <FaUserAlt> </FaUserAlt>
-            </Nav.Link>
-          </Nav>
+            </Nav>
+            <Nav>
+          
+            <NavLink eventKey={2} href="#memes">
+            <FaUserAlt className='text-light' > </FaUserAlt>
+            </NavLink>
+            </Nav>
       
           <div className='d-lg-none'>
             <LeftSideNav> </LeftSideNav>
           </div>
           
-          
-          
         </Navbar.Collapse>
-      </Container>
-    </Navbar>
-        </div>
+        </Container>
+      </Navbar>
+      </div>
     );
 };
 

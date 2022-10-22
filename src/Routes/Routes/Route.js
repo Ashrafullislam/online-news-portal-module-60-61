@@ -11,7 +11,7 @@ export  const routes = createBrowserRouter([
         {
             path: '/',
             loader() {
-             return fetch(`http://localhost:5000/newsData`)
+             return fetch(`http://localhost:5000/allNews`)
             },
             element: <Home >  </Home> 
         },
@@ -25,9 +25,9 @@ export  const routes = createBrowserRouter([
         },
 
         {
-            path: '/news/:id',
+            path: '/newses/:id',
             loader({params}) {
-             return fetch(`http://localhost:5000/newsData/${params.id}`)
+             return fetch(`http://localhost:5000/newses/${params.id}`)
             },
             element: <News> </News>     
         },

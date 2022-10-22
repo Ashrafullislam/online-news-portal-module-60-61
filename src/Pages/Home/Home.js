@@ -8,8 +8,8 @@ const Home = () => {
         <div>
             <h3 className='text-center'>  Total News of home:  {allNews.length} </h3>
             {
-                allNews.map(data => <NewsCardSummary  key={data.category_id}
-                    newsCategory = {data}
+                allNews.map(data => <NewsCardSummary  key={data._id}
+                    news = {data}
                     > </NewsCardSummary>)
             }
 

@@ -1,0 +1,16 @@
+.author-img{
+    width: 40px;
+    border-radius: 50%;
+    height: 40px ;
+}
+.author-info{
+    line-height: 10px;
+}
+
+.news-summary-card{
+border-radius: 8px;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.news-summary-card:hover{
+    box-shadow: 4px 5px 5px rgba(32, 32, 32, 0.425);
+}
